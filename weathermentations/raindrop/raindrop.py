@@ -6,7 +6,7 @@ from PIL import ImageDraw
 import pyblur3
 import random
 from random import randint
-from raindrop.config import cfg
+from .config import cfg
 
 """
 This module contains a description of Raindrop class

@@ -3,7 +3,7 @@ from raindrop.config import cfg
 
 from PIL import Image
 import numpy as np
-from raindrop.raindrop import Raindrop
+from .raindrop.raindrop import Raindrop
 
 
 import random

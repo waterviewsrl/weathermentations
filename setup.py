@@ -8,7 +8,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='weathermentations',
-      version = '0.1.1',
+      version = '0.2.0',
       description = 'Weather augmentation routines for Albumentations',
       long_description = long_description,
       keywords = 'blur',

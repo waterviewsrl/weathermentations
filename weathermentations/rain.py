@@ -1,20 +1,33 @@
-from raindrop.dropgenerator import generateDrops, generate_label
-from raindrop.config import cfg
+from .raindrop.dropgenerator import generateDrops, generate_label
+from .raindrop.config import cfg
 
 from PIL import Image
 import numpy as np
 from .raindrop.raindrop import Raindrop
 
 
-import random
 from random import randint
-import math
 
-from albumentations import Compose
 from albumentations.core.transforms_interface import ImageOnlyTransform
 
 
 class DropsOnLens(ImageOnlyTransform):
+    """Simulates Water Drops on lenses
+    Based on https://github.com/ricky40403/ROLE
+
+    Args:
+        maxR (float): Maximum drop radius.
+        minR (float): Maximum drop radius.
+        maxDrops (float): Maximum num of drops.
+        minDrops (float): Minimum num of drops.
+        edge_darkratio (float): Edge Dark Ratio (see original repo and doc).
+        label_thres (float): Label threshold (see original repo and doc).
+
+    Targets:
+        image
+    Image types:
+        uint8, float32
+    """
 
     def __init__(self, always_apply=False, p=1.0, **cgf_override):
         super().__init__(always_apply, p)
